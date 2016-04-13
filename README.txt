@@ -17,7 +17,7 @@ $ heroku local web
 ## Heroku
 
 To access the application on heroku go to the following link:
-https://frozen-inlet-79465.herokuapp.com/NumericalIntegration
+https://desolate-woodland-81976.herokuapp.com/FindValueX
 
 ##Javadoc
 Tarea6\target\site\apidocs
