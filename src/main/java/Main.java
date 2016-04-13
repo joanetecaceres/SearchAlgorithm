@@ -1,16 +1,19 @@
-package SearchAlgorithm;
 
+import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import static spark.Spark.*;
 import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
 import static spark.Spark.get;
+
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import control.Controller;
-import model.TDistribution;
-import static spark.Spark.get;
 
 /**
  * Esta clase administra la vista de la pagina y muestra los resultados de los casos de prueba
@@ -22,9 +25,18 @@ public class Main {
      * Metodo main 
      * @param args argumentos
      */
-   public static void main(String[] args) {
-        port(Integer.valueOf(System.getenv("PORT")));
-        staticFileLocation("/public");
+     public static void main(String[] args) {
+        
+       port(Integer.valueOf(System.getenv("PORT"))); 
+       staticFileLocation("/public");
+
+       /*String portEnv = System.getenv("PORT");    
+       if (portEnv == null) {
+        portEnv = "5000";
+        //logger.warn("Environment variable 'PORT' not defined - using default {}", portEnv);    
+       }    
+       Integer port = Integer.valueOf(portEnv);*/
+
         get("/FindValueX", (req, res) -> {            
            String resultHtml="<!DOCTYPE html><br>" +
                    "<html><br>" +
